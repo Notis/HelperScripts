@@ -1,0 +1,12 @@
+set gui+=nomenu,nonavigation
+map <A-x> :
+map <C-g> <Esc>
+map <C-n> j
+map <C-p> k
+imap <C-g> <Esc>
+cmap <C-g> <Esc>
+map <C-s> /
+imap <C-s> <Esc>/
+imap <C-o> <Esc><C-o>
+set defsearch=google
+cmap <A-m> <Home><C-Right><Right>
