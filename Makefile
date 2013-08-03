@@ -1,6 +1,6 @@
 .PHONY : zsh vimperator
 
-all: zsh vimperator emacs
+all: zsh vimperator
 
 zsh: ~/.zshrc ~/.oh-my-zsh
 
