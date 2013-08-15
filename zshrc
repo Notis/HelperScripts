@@ -46,7 +46,7 @@ export PYTHON_BIN=$(dirname $(which python))
 . $PYTHON_BIN/virtualenvwrapper.sh
 
 function ghc {
-    git clone "git@github.com:$@"
+    git clone git@github.com:$@
 }
 
 function ec {
