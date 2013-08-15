@@ -34,7 +34,7 @@ plugins=(git archlinux django python pip)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/home/fakedrake/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:/home/fakedrake/.rvm/bin:/home/fakedrake/Sources/android-sdk-linux/tools
+export PATH=$HOME/bin/py/bin/:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:$HOME/.rvm/bin:$HOME/Sources/android-sdk-linux/tools
 
 . $HOME/bin/py/bin/activate
 

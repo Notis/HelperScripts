@@ -7,9 +7,13 @@ function printe {echo "[ERROR] $*"}
 function setup_arch {
     # Package manager
     PAC=pacman -S
+    VIRTUALENV=virtualenv2
+
 
     # Packages
     PYTHON_PAC=python2
+    PIP_PAC=python2-pip
+    VIRTUALENV_PAC=python2-virtualenv
 }
 
 function setup_ubuntu {
@@ -18,6 +22,16 @@ function setup_ubuntu {
 
     # Packages
     PYTHON_PAC=python
+}
+
+function install_pac {
+    while $#; do
+	case $1; in
+	    "python")
+		[ command -v $PYTHON_PAC ] || $PAC $PYTHON_PAC $PIP_PAC
+		[ command -v $VIRTUALENV ] || $PIP install $VIRTUALENV
+	esac
+    done
 }
 
 if command -v pacman; then
