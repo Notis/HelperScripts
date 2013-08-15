@@ -28,8 +28,11 @@ function install_pac {
     while $#; do
 	case $1; in
 	    "python")
-		[ command -v $PYTHON_PAC ] || $PAC $PYTHON_PAC $PIP_PAC
-		[ command -v $VIRTUALENV ] || $PIP install $VIRTUALENV
+		[ command -v $PYTHON_PAC ] || $PAC $PYTHON_PAC $PIP_PAC $VIRTUALENV_PAC
+		$VIRTUALENV --no-site-packages $HOME/bin/py/
+
+		# Local copy of virtualenv
+		pip install virtualenv
 	esac
     done
 }
