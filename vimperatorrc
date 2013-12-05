@@ -9,3 +9,4 @@ map <C-s> /
 imap <C-s> <Esc>/
 imap <C-o> <Esc><C-o>
 cmap <A-m> <Home><C-Right><Right>
+set editor=emacsclient
