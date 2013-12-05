@@ -13,6 +13,5 @@ vimperator: ~/.vimperatorrc
 	ln -s $(PWD)/zshrc ~/.zshrc
 
 ~/.oh-my-zsh:
-	ifeq ($(wildcard ~/.oh-my-zsh),)
-		$(shell curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh | bash )
-	endif
+	curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh \
+		| bash
