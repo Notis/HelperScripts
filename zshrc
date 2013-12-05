@@ -92,3 +92,7 @@ function usedotemacs {
     echo "Actually ~/.emacs.d linking to $1."
     ln -s $1 ~/.emacs.d
 }
+
+if [ -f $HOME/.zshrc.mit ]; then
+    source $HOME/.zshrc.mit
+fi

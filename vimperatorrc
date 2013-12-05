@@ -8,5 +8,4 @@ cmap <C-g> <Esc>
 map <C-s> /
 imap <C-s> <Esc>/
 imap <C-o> <Esc><C-o>
-set defsearch=duckduckgo
 cmap <A-m> <Home><C-Right><Right>

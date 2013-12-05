@@ -2,14 +2,14 @@
 
 all: zsh vimperator
 
-zsh: ~/.zshrc ~/.oh-my-zsh
+zsh: ~/.zshrc
 
 vimperator: ~/.vimperatorrc
 
 ~/.vimperatorrc:
 	ln -s $(PWD)/vimperatorrc ~/.vimperatorrc
 
-~/.zshrc:
+~/.zshrc:  ~/.oh-my-zsh
 	ln -s $(PWD)/zshrc ~/.zshrc
 
 ~/.oh-my-zsh:
