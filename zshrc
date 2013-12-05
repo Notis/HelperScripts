@@ -43,7 +43,7 @@ export PATH=$HOME/bin/py/bin/:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/
 export WORKON_HOME=~/Envs/
 export PYTHON_BIN=$(dirname $(which python))
 
-. $PYTHON_BIN/virtualenvwrapper.sh
+# . $PYTHON_BIN/virtualenvwrapper.sh
 
 function ghc {
     git clone git@github.com:$@
@@ -60,3 +60,35 @@ alias pse="sudo pacman -Ss"
 alias yup="sudo yaourt -Syu"
 alias y="sudo yaourt -S"
 alias yse="sudo yaourt -Ss"
+
+alias e="emacs -Q -nw"
+alias se="sudo emacs -Q -nw"
+
+mount -l | grep /tools > /dev/null && export PATH=$PATH:/tools/sparc/sparc-linux/bin
+[ -d $HOME/localroot ] && export PATH=$HOME/localroot/bin:$PATH
+
+export EDITOR='emacsclient'
+export PATH="$PATH:/home/fakedrake/Projects/ThinkSilicon/xilinx-zynq-bootstrap/sources/gnu-tools-archive/GNU_Tools/bin/"
+
+function usedotemacs {
+    if [ -d $1 ] || [ -d $1/init.el ]; then
+	if [ -s ~/.emacs.d ]; then
+	    link_dest=$(ls -la ~ | grep .emacs.d | grep -o1 "[^ ]*$")
+	    echo "Shamelessly removing the symbolic link to $link_dest"
+	    rm ~/.emacs.d
+	elif [ -d ~/.emacs.d ]; then
+	    BACKPATH=~/Sources/dotemacs-$(date +%d-%m-%y-%H-%M-%S)
+	    echo "Backup current dotemacs as $BACKPATH"
+	    mv ~/.emacs.d $BACKPATH
+	else
+	    echo "Wow there is an .emacs.d but I have no idea what it is."
+	    exit 1
+	fi
+    else
+	echo "No can do. Not an emacs init directory."
+	exit 1
+    fi
+
+    echo "Actually ~/.emacs.d linking to $1."
+    ln -s $1 ~/.emacs.d
+}
