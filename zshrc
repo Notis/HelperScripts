@@ -96,3 +96,10 @@ function usedotemacs {
 if [ -f $HOME/.zshrc.mit ]; then
     source $HOME/.zshrc.mit
 fi
+
+# Give the names of the original and copied file and will get the
+# compaltetion progress.
+function cpprg {
+    du $1 | awk '{print $1}' | tail -2 \
+	| python -c "a = float(raw_input()); b = float(raw_input()); print a/b"
+}
