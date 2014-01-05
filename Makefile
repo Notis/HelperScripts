@@ -15,3 +15,16 @@ vimperator: ~/.vimperatorrc
 ~/.oh-my-zsh:
 	curl -L https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh \
 		| bash
+
+~/.offlineimaprc: ~/.offlineimap.py
+	ln -s $(PWD)/offlineimaprc ~/.offlineimaprc
+
+~/.offlineimap.py:
+	ln -s $(PWD)/offlineimap.py ~/.offlineimap.py
+
+.PHONY:
+offlineimap: ~/.offlineimaprc
+
+.PHONY:
+offlineimap-clean:
+	rm -rf ~/.offlineimaprc ~/.offlineimap.py
