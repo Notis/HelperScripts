@@ -3,6 +3,8 @@ import subprocess
 
 def mailpasswd(acct):
     acct = os.path.basename(acct)
+    # pass insert Email/{gmail,csail}
+    # to create my passwords.
     args = ["pass", "Email/%s" % acct]
     try:
         return subprocess.check_output(args).strip()

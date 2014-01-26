@@ -1,8 +1,9 @@
 [general]
 ui = ttyui
-accounts = gmail
+accounts = gmail, csail
 pythonfile = ~/.offlineimap.py
 
+# GMAIL
 [Account gmail]
 localrepository = gmail-local
 remoterepository = gmail-remote
@@ -19,3 +20,29 @@ remotepasseval = mailpasswd("gmail")
 realdelete = no
 maxconnections = 3
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+
+# CSAIL
+[Account csail]
+localrepository = gmail-local
+remoterepository = gmail-remote
+status_backend = sqlite
+
+[Repository csail-local]
+type = Maildir
+localfolders = ~/Mail/csail
+
+[Repository csail-remote]
+type = SMTP
+remoteuser = cperivol
+remotepasseval = mailpasswd("csail")
+realdelete = no
+maxconnections = 3
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+
+[mbnames]
+enabled = yes
+filename = ~/.mutt/mailboxes
+header = "mailboxes "
+peritem = "+%(accountname)s/%(foldername)s"
+sep = " "
+footer = "\n"
