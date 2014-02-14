@@ -23,8 +23,8 @@ sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 
 # CSAIL
 [Account csail]
-localrepository = gmail-local
-remoterepository = gmail-remote
+localrepository = csail-local
+remoterepository = csail-remote
 status_backend = sqlite
 
 [Repository csail-local]
@@ -32,9 +32,11 @@ type = Maildir
 localfolders = ~/Mail/csail
 
 [Repository csail-remote]
-type = SMTP
+type = IMAP
 remoteuser = cperivol
 remotepasseval = mailpasswd("csail")
+remotehost = imap.csail.mit.edu
+ssl = yes
 realdelete = no
 maxconnections = 3
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
