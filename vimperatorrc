@@ -114,4 +114,7 @@ style -name indigo-sbmcommentsviewer chrome://* <<EOM
 EOM
 " }}}1
 
+map <A-n> :tabnext<CR>
+map <A-p> :tabprev<CR>
+
 " vim: ft=vimperator
