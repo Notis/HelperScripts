@@ -103,3 +103,8 @@ function cpprg {
     du $1 | awk '{print $1}' | tail -2 \
 	| python -c "a = float(raw_input()); b = float(raw_input()); print a/b"
 }
+
+alias scs="sudo systemctl start"
+alias scr="sudo systemctl restart"
+alias scp="sudo systemctl stop"
+alias zsh_git_hide="git config oh-my-zsh.hide-status 1"
