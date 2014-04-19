@@ -11,7 +11,12 @@ function my_run
     "$@" || (echo "Failed" && exit 0)
 }
 
-IFACE=$(ip link | grep "state UP" | sed -e 's/^[0-9]*: \([^:]*\):.*/\1/' | head -1)
+if [ $1 ]; then
+    IFACE=$1
+else
+    IFACE=$(ip link | grep "state UP" | sed -e 's/^[0-9]*: \([^:]*\):.*/\1/' | head -1)
+fi
+
 echo "Iface found $IFACE"
 if [ ! "$IFACE" ]; then
     echo "No interface up found."
