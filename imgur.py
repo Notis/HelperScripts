@@ -1,6 +1,7 @@
-#!/usr/bin/env pythopn
+#!/usr/bin/env python2
 import Tkinter as tk
 from PIL import Image, ImageTk
+import json
 
 from pprint import pprint
 
@@ -8,13 +9,31 @@ import os
 import pyimgur
 
 CLIENT_ID = "3646d99ff2928d0"
-
+UPLOADED_FILES_JSON = "/home/fakedrake/bin/imgur.json"
 HELP = ""
 
-def upload_image(path, title):
-    im = pyimgur.Imgur(CLIENT_ID)
-    img = im.upload_image(path, title=title)
-    return img.link
+class MyImg(object):
+    link = "a link"
+    def upload_image(self, *ar, **kw):
+        return MyImg()
+
+def upload_image(path, title, jsondb=UPLOADED_FILES_JSON):
+    if os.path.isfile(jsondb):
+        imgs = json.load(open(jsondb))
+    else:
+        imgs = dict()           # path->link
+
+    if path in imgs:
+        link = imgs[path]
+    else:
+        im = pyimgur.Imgur(CLIENT_ID)
+        img = im.upload_image(path, title=title)
+        imgs[path] = img.link
+        open(jsondb, "w+").write(json.dumps(imgs))
+
+        link = img.link
+
+    return link
 
 def isimage(fname):
     for ext in [".png", ".jpg", ".gif"]:

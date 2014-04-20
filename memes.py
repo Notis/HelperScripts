@@ -3,7 +3,7 @@
 import json
 from fuzzywuzzy import process
 
-MEMEFILE = "./memes.json"
+MEMEFILE = "/home/fakedrake/bin/memes.json"
 
 def get_memes(fname=MEMEFILE):
     try:
