@@ -108,3 +108,23 @@ alias scs="sudo systemctl start"
 alias scr="sudo systemctl restart"
 alias scp="sudo systemctl stop"
 alias zsh_git_hide="git config oh-my-zsh.hide-status 1"
+
+# find the first venv backwards and activate it.
+pv() {
+    A=./*/bin/activate;
+    for i in {1..$(pwd | grep -o / | wc -l)}; do
+	if bash -c "ls $A" 2> /dev/null; then
+	    source $(bash -c "ls $A | head -1");
+	    break;
+	fi;
+	A=../$A;
+    done
+}
+
+# Only argument is the url. For 3.12 it would be
+# https://bitbucket.org/migerh/workspace-grid-gnome-shell-extension/downloads/workspace-grid%40mathematical.coffee.gmail.com-for-3.12.zip
+update_workspace_grid() {
+    wget $1 -O /tmp/workspace-grid.zip
+    cd ~/.local/share/gnome-shell/extensions
+    unzip /tmp/workspace-grid.zip
+}
