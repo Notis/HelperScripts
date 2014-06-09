@@ -55,7 +55,7 @@ function ec {
 
 alias pup="sudo pacman -Syu"
 alias p="sudo pacman -S"
-alias pse="sudo pacman -Ss"
+alias pse="pacman -Ss"
 
 alias yup="sudo yaourt -Syu"
 alias y="sudo yaourt -S"
