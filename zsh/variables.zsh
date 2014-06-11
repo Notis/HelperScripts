@@ -1,7 +1,7 @@
 
 if [ -f /usr/share/source-highlight/src-hilite-lesspipe.sh ]; then
     export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
-    export LESS=' -R '
+    export LESS=' -R -N'
 else
     echo "Less highlighting scripts not found, install it with"
     echo "\t$ sudo apt-get install source-highlight"
