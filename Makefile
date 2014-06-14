@@ -22,6 +22,26 @@ vimperator: ~/.vimperatorrc
 ~/.offlineimap.py:
 	ln -s $(PWD)/offlineimap.py ~/.offlineimap.py
 
+offlineimap-sysctl:
+	echo "[Unit]
+	Description=Start offlineimap as a daemon
+	Requires=network.target
+	After=network.target
+
+	[Service]
+	User=%i
+	ExecStart=/usr/bin/offlineimap
+	KillSignal=SIGUSR2
+	Restart=always
+
+	[Install]
+	WantedBy=multi-user.target
+	" > /etc/systemd/system/offlineimap@.service
+	systemctl offlineimap enable
+
+offlineimap-update:
+	offlineimap
+
 .PHONY:
 offlineimap: ~/.offlineimaprc
 

@@ -115,6 +115,9 @@ EOM
 " }}}1
 
 map <A-n> :tabnext<CR>
-map <A-p> :tabprev<CR>
+map <A-p> :tabprevious<CR>
+
+imap <A-n> <Esc>:tabnext<CR>
+imap <A-p> <Esc>:tabprevious<CR>
 
 " vim: ft=vimperator
