@@ -7,9 +7,9 @@ function prompt_char {
 
 function host_color {
     case $(hostname) in
-	'purple') echo 'magenta';;
-	'red') echo 'red';;
-	'yellow') echo 'yellow';;
+	'purple' | 'ashmore') echo 'magenta';;
+	'red' |  'tuvalu') echo 'red';;
+	'yellow' | 'futuna') echo 'yellow';;
 	'cyan') echo 'cyan';;
 	'gray') echo 'grey';;
 	'white') echo 'white';;
