@@ -33,8 +33,8 @@ fi
 
 alias zsh_git_hide="git config oh-my-zsh.hide-status 1"
 
-# SSH aliases
-alias purple="ssh cperivol@purple"
-alias futuna="ssh cperivol@futuna.csail.mit.edu"
-alias tuvalu="ssh cperivol@tuvalu.csail.mit.edu"
-alias ashmore="ssh cperivol@ashmore.csail.mit.edu"
+# SSH aliases (x forwarding for xclip)
+alias purple="ssh -X cperivol@purple"
+alias futuna="ssh -X cperivol@futuna.csail.mit.edu"
+alias tuvalu="ssh -X cperivol@tuvalu.csail.mit.edu"
+alias ashmore="ssh -X cperivol@ashmore.csail.mit.edu"
