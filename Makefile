@@ -54,3 +54,6 @@ THEME_FILE=/usr/share/themes/Adwaita/metacity-1/metacity-theme-3.xml
 .PHONY:
 gnome-small-maximized:
 	cat  $(THEME_FILE) |awk 'BEGIN{a=0} /<frame-geometry .*name="max"/{a=1} /<\/frame_geometry>/{a=0} /name="title_vertical_pad"/{if (a==1) {gsub("value=\".*\"", "value=\"1\""); print}'
+
+~/.screenrc: $(CURDIR)/screenrc
+	ln -s $< $@

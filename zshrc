@@ -12,9 +12,7 @@ try_source theme.zsh
 try_source variables.zsh
 try_source aliases.zsh
 try_source functions.zsh
-try_source python.zsh
 try_source bash_compat.zsh
 try_source mit.zsh
 try_source thinksilicon.zsh
-
-fortune -o
+try_source python.zsh

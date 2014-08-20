@@ -40,6 +40,7 @@ alias tuvalu="ssh -X cperivol@tuvalu.csail.mit.edu"
 alias ashmore="ssh -X cperivol@ashmore.csail.mit.edu"
 alias yscreen='ssh -t cperivol@purple ssh -t yellow screen -R'
 alias fsql="mysql -u csail --password=pass bitnami_mediawiki -h futuna.csail.mit.edu -P 3307"
+alias asql="mysql -u csail --password=pass bitnami_mediawiki -h ashmore.csail.mit.edu -P 3307"
 alias fscreen="ssh -t cperivol@futuna.csail.mit.edu screen -R"
 alias ascreen="ssh -t cperivol@ashmore.csail.mit.edu screen -R"
 alias tscreen="ssh -t cperivol@tuvalu.csail.mit.edu screen -R"
