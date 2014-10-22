@@ -44,3 +44,7 @@ alias asql="mysql -u csail --password=pass bitnami_mediawiki -h ashmore.csail.mi
 alias fscreen="ssh -t cperivol@futuna.csail.mit.edu screen -R"
 alias ascreen="ssh -t cperivol@ashmore.csail.mit.edu screen -R"
 alias tscreen="ssh -t cperivol@tuvalu.csail.mit.edu screen -R"
+alias tsql="mysql -u csail --password=pass bitnami_mediawiki -h tuvalu.csail.mit.edu -P 3307"
+
+# Server
+alias pyserve='python2 -m SimpleHTTPServer'

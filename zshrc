@@ -14,5 +14,6 @@ try_source aliases.zsh
 try_source functions.zsh
 try_source bash_compat.zsh
 try_source mit.zsh
-try_source thinksilicon.zsh
+# try_source thinksilicon.zsh
 try_source python.zsh
+try_source serial.zsh
