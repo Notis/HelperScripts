@@ -1,8 +1,8 @@
 set gui+=nomenu,nonavigation
 map <A-x> :
 map <C-g> <Esc>
-map <C-n> j
-map <C-p> k
+map <C-n> <Down>
+map <C-p> <Up>
 imap <C-g> <Esc>
 cmap <C-g> <Esc>
 map <C-s> /
@@ -10,7 +10,6 @@ imap <C-s> <Esc>/
 imap <C-o> <Esc><C-o>
 cmap <A-m> <Home><C-Right><Right>
 set editor=emacsclient
-
 
 " Colors!
 " ==VimperatorColorSchema==
@@ -113,11 +112,5 @@ style -name indigo-sbmcommentsviewer chrome://* <<EOM
     }
 EOM
 " }}}1
-
-map <A-n> :tabnext<CR>
-map <A-p> :tabprevious<CR>
-
-imap <A-n> <Esc>:tabnext<CR>
-imap <A-p> <Esc>:tabprevious<CR>
 
 " vim: ft=vimperator

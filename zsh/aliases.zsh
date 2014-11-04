@@ -20,6 +20,12 @@ if avail yaourt; then
     alias yse="sudo yaourt -Ss"
 fi
 
+if avail brew; then
+    alias pup="brew cask update && brew upgrade"
+    alias p="brew cask install"
+    alias pse="brew cask search"
+fi
+
 if avail emacs; then
     alias e="emacs -Q -nw"
     alias se="sudo emacs -Q -nw"
