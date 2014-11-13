@@ -13,6 +13,7 @@ function host_color {
 	'cyan') echo 'cyan';;
 	'gray') echo 'grey';;
 	'white') echo 'white';;
+	'astaroth') echo 'white';;
 	*) echo 'green';;
     esac
 }
