@@ -9,7 +9,9 @@ map <C-s> /
 imap <C-s> <Esc>/
 imap <C-o> <Esc><C-o>
 cmap <A-m> <Home><C-Right><Right>
+map D <C-g>:js content.window.onbeforeunload = undefined<CR>:tabclose!<CR>
 set editor=emacsclient
+set defsearch=ddg
 
 " Colors!
 " ==VimperatorColorSchema==
