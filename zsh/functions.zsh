@@ -28,8 +28,8 @@ update_workspace_grid() {
 
 function ghc {
     if [[ "$1" = $(basename "$1") ]]; then
-	git clone "git@github.com:fakedrake/$1"
-
+	git clone "git@github.com:fakedrake/$1" "$2" ||
+	git clone "git@github.com:codebender/$1" "$2"
     else
 	git clone "http://github.com/$1"
     fi
