@@ -7,5 +7,7 @@ else
     echo "\t$ sudo apt-get install source-highlight"
 fi
 
-export EDITOR='emacsclient'
+export EDITOR='/usr/local/bin/emacsclient'
 export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:$HOME/.rvm/bin
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export HOMEBREW_GITHUB_API_TOKEN=1ecb5e9cad56fc9808aff7bfa523f9a702d5a316

@@ -1,4 +1,6 @@
 set gui+=nomenu,nonavigation
+map j <Down>
+map k <Up>
 map <A-x> :
 map <C-g> <Esc>
 map <C-n> <Down>

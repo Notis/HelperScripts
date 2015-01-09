@@ -41,3 +41,8 @@ function ghc {
 function ec {
     emacsclient "$1" &
 }
+
+
+function yt {
+    youtube-dl -x --audio-format mp3 --restrict-filenames --format "bestaudio" --audio-qualit 2 $1 -o "$HOME/Music/youtube/%(title)s.mp3"
+}

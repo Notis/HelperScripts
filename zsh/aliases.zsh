@@ -22,8 +22,8 @@ fi
 
 if avail brew; then
     alias pup="brew cask update && brew upgrade"
-    alias p="brew cask install"
-    alias pse="brew cask search"
+    function p {brew cask install "$1" || brew install "$1" }
+    function pse {brew cask search "$1" ; brew search "$1"}
 fi
 
 if avail emacs; then
@@ -50,7 +50,17 @@ alias asql="mysql -u csail --password=pass bitnami_mediawiki -h ashmore.csail.mi
 alias fscreen="ssh -t cperivol@futuna.csail.mit.edu screen -R"
 alias ascreen="ssh -t cperivol@ashmore.csail.mit.edu screen -R"
 alias tscreen="ssh -t cperivol@tuvalu.csail.mit.edu screen -R"
+alias ascr="ssh -t drninjabatman@astaroth screen -R"
 alias tsql="mysql -u csail --password=pass bitnami_mediawiki -h tuvalu.csail.mit.edu -P 3307"
+alias sshaws="ssh -i ~/Desktop/id_rsa fake@ec2-54-174-134-98.compute-1.amazonaws.com"
+alias awscreen="ssh -t -i ~/Desktop/id_rsa fake@ec2-54-174-134-98.compute-1.amazonaws.com screen -R"
 
 # Server
 alias pyserve='python2 -m SimpleHTTPServer'
+
+alias kl="k tasks"
+alias kt="k work"
+alias kw="k work"
+alias kd="k description"
+alias kdt="k details"
+alias kst="k add subtask"
