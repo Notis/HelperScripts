@@ -15,6 +15,13 @@ map D <C-g>:js content.window.onbeforeunload = undefined<CR>:tabclose!<CR>
 set editor=emacsclient
 set defsearch=ddg
 
+imap <A-}> <Esc>gt
+imap <A-{> <Esc>gT
+cmap <A-}> <Esc>gt
+cmap <A-{> <Esc>gT
+map <A-}> gt
+map <A-{> gT
+
 " Colors!
 " ==VimperatorColorSchema==
 " name: indigo
