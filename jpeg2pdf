@@ -18,6 +18,7 @@
 #
 #############################################################################
 
+ver=`gs --version`
 outfile=$1
 shift
 
@@ -31,5 +32,5 @@ gs \
   -sDEVICE=pdfwrite \
   -dPDFSETTINGS=/prepress \
   -o "$outfile" \
-   /usr/local/share/ghostscript/9.02/lib/viewjpeg.ps \
+   /usr/local/share/ghostscript/"$ver"/lib/viewjpeg.ps \
   -c "${param}"
